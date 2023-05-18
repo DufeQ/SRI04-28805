@@ -1,4 +1,4 @@
-package s28805.sri04jms.receiver;
+package s28805.sri04jms.receiver.example;
 
 import jakarta.jms.Destination;
 import jakarta.jms.JMSException;
@@ -10,8 +10,8 @@ import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 import lombok.RequiredArgsConstructor;
-import s28805.sri04jms.config.JmsConfig;
-import s28805.sri04jms.model.HelloMessage;
+import s28805.sri04jms.config.example.JmsConfig;
+import s28805.sri04jms.model.example.HelloMessage;
 
 import java.time.LocalDateTime;
 

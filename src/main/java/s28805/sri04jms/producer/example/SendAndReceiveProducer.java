@@ -1,4 +1,4 @@
-package s28805.sri04jms.producer;
+package s28805.sri04jms.producer.example;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,10 +9,9 @@ import jakarta.jms.TextMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import s28805.sri04jms.config.JmsConfig;
-import s28805.sri04jms.model.HelloMessage;
+import s28805.sri04jms.config.example.JmsConfig;
+import s28805.sri04jms.model.example.HelloMessage;
 
 import java.time.LocalDateTime;
 
@@ -21,7 +20,7 @@ import java.time.LocalDateTime;
 public class SendAndReceiveProducer {
     private final JmsTemplate jmsTemplate;
     private final ObjectMapper objectMapper;
-    @Scheduled(fixedRate = 2000)
+//    @Scheduled(fixedRate = 2000)
     public void sendAndReceive() throws JMSException, JsonProcessingException {
         HelloMessage message = HelloMessage.builder()
                 .id(HelloMessage.nextId())

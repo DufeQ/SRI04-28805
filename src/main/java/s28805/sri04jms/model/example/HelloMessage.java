@@ -1,4 +1,4 @@
-package s28805.sri04jms.model;
+package s28805.sri04jms.model.example;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

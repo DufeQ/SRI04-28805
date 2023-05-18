@@ -1,4 +1,4 @@
-package s28805.sri04jms.config;
+package s28805.sri04jms.config.exercise;
 
 import jakarta.jms.ConnectionFactory;
 import jakarta.jms.Destination;
@@ -16,13 +16,13 @@ import org.springframework.jms.support.converter.MessageType;
 import org.springframework.jms.support.destination.DynamicDestinationResolver;
 
 @Configuration
-public class JmsConfig {
-    public static final String QUEUE_HELLO_WORLD = "HELLO.QUEUE";
-    public static final String TOPIC_HELLO_WORLD = "HELLO.TOPIC";
-    public static final String QUEUE_SEND_AND_RECEIVE = "SEND_RECEIVE.QUEUE";
+public class BolidJmsConfig {
+    public static final String QUEUE_BOLID_WORLD = "BOLID.QUEUE";
+    public static final String TOPIC_BOLID_WORLD = "BOLID.TOPIC";
+    public static final String BOLID_SEND_AND_RECEIVE = "BOLID_SEND_RECEIVE.QUEUE";
 
     @Bean
-    public JmsListenerContainerFactory<?> queueConnectionFactory(@Qualifier("jmsConnectionFactory") ConnectionFactory connectionFactory,
+    public JmsListenerContainerFactory<?> bolidQueueConnectionFactory(@Qualifier("jmsConnectionFactory") ConnectionFactory connectionFactory,
                                                                  DefaultJmsListenerContainerFactoryConfigurer configurer){
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         configurer.configure(factory, connectionFactory);
@@ -31,7 +31,7 @@ public class JmsConfig {
     }
 
     @Bean
-    public JmsListenerContainerFactory<?> topicConnectionFactory(@Qualifier("jmsConnectionFactory") ConnectionFactory connectionFactory,
+    public JmsListenerContainerFactory<?> bolidTopicConnectionFactory(@Qualifier("jmsConnectionFactory") ConnectionFactory connectionFactory,
                                                                  DefaultJmsListenerContainerFactoryConfigurer configurer){
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         configurer.configure(factory, connectionFactory);
@@ -39,7 +39,7 @@ public class JmsConfig {
         return factory;
     }
 
-    @Bean public DynamicDestinationResolver destinationResolver() {
+    @Bean public DynamicDestinationResolver bolidDestinationResolver() {
         return new DynamicDestinationResolver() {
             @Override
             public Destination resolveDestinationName(Session session, String destinationName, boolean pubSubDomain) throws JMSException{
@@ -52,7 +52,7 @@ public class JmsConfig {
     }
 
     @Bean
-    public MessageConverter messageConverter() {
+    public MessageConverter bolidMessageConverter() {
         MappingJackson2MessageConverter converter = new
                 MappingJackson2MessageConverter();
         converter.setTargetType(MessageType.TEXT);

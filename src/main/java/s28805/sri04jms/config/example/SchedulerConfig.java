@@ -1,4 +1,4 @@
-package s28805.sri04jms.config;
+package s28805.sri04jms.config.example;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
