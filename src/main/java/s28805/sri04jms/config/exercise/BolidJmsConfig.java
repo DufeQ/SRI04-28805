@@ -17,8 +17,10 @@ import org.springframework.jms.support.destination.DynamicDestinationResolver;
 
 @Configuration
 public class BolidJmsConfig {
-    public static final String QUEUE_BOLID_WORLD = "BOLID.QUEUE";
-    public static final String TOPIC_BOLID_WORLD = "BOLID.TOPIC";
+    public static final String QUEUE_BOLID = "BOLID.QUEUE";
+    public static final String TOPIC_BOLID = "BOLID.TOPIC";
+    public static final String TOPIC_FAILURE = "FAILURE.TOPIC";
+    public static final String TOPIC_CRIT_FAILURE = "CRIT_FAILURE.TOPIC";
     public static final String BOLID_SEND_AND_RECEIVE = "BOLID_SEND_RECEIVE.QUEUE";
 
     @Bean
